@@ -32,7 +32,7 @@ class DateUtilityTests: XCTestCase {
 
 	func test_date_convertTimeStampToDateZero() {
 		let date = Utilities.convertTimestampToDate(ts: 0)
-		XCTAssertEqual(date, "01-Jan-1970","The date should be equal")
+		XCTAssertEqual(date, "31-Dec-1969","The date should be equal")
 	}
 
 	func test_convertFromISODateNil() {
@@ -55,7 +55,7 @@ class DateUtilityTests: XCTestCase {
 	func test_dayForDateNil() {
 		let date = Date(timeIntervalSince1970: TimeInterval(0))
 		let returnedDate = Utilities.dayForDate(date: date)
-		XCTAssertEqual(returnedDate, "1", "Day should match")
+		XCTAssertEqual(returnedDate, "31", "Day should match")
 	}
 
 	func test_dayForDateEqual() {

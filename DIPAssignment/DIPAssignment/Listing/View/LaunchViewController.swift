@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AppCenterCrashes
+import os
 
 public final class LaunchViewController: UIViewController {
 
@@ -148,6 +150,9 @@ extension LaunchViewController: LaunchCellProtocol {
 extension LaunchViewController {
 
 	@IBAction private func payloadSwitchChange(_ sender: UISwitch) {
+        if sender.isOn {
+            Crashes.generateTestCrash()
+        }
 		viewModel.setFilterStateToDatabaseAndPerformFilter(state: sender.isOn)
 	}
 }
